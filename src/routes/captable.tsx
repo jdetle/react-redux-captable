@@ -106,22 +106,32 @@ const CapTable: React.FC = ({}) => {
 const Shareholders = ({
   shareholders,
 }: Pick<CreateCapTableRequest, "shareholders">) => {
-  const defaultFirstNameData = { blurred: false, currentFN: '', isValid: false, isUnique: true }
-  const defaultLastNameData =  { blurred: false, currentLN: '', isValid: false, isUnique: true } 
+  const defaultFirstNameData = {
+    blurred: false,
+    currentFN: "",
+    isValid: false,
+    isUnique: true,
+  };
+  const defaultLastNameData = {
+    blurred: false,
+    currentLN: "",
+    isValid: false,
+    isUnique: true,
+  };
 
   const [currentFN, setCurrentFN] = useState<{
-    blurred: boolean
-    currentFN: string
-    isUnique: boolean
-    isValid: boolean
-  }>(defaultFirstNameData)
+    blurred: boolean;
+    currentFN: string;
+    isUnique: boolean;
+    isValid: boolean;
+  }>(defaultFirstNameData);
 
   const [currentLN, setCurrentLN] = useState<{
-    blurred: boolean
-    currentLN: string
-    isUnique: boolean
-    isValid: boolean
-  }>(defaultLastNameData)
+    blurred: boolean;
+    currentLN: string;
+    isUnique: boolean;
+    isValid: boolean;
+  }>(defaultLastNameData);
 
   return (
     <Card>
@@ -129,7 +139,7 @@ const Shareholders = ({
         {({ push }: FieldArrayRenderProps) => {
           return (
             <Grid container={true} xs={12}>
-              <><TextField onChange={() => {}}></>
+              <TextField onChange={() => {}} />
             </Grid>
           );
         }}
