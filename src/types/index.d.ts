@@ -2,6 +2,7 @@ type CreateCapTableRequest = {
   totalShares: number;
   sharePrice: number;
   companyName: string;
+  shareholders: CreateShareholderRequest[];
 };
 
 export type CapTable = CreateCapTableRequest & {
