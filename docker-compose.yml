@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  postgres:
+    # Image mdillon/postgis only supports major.minor versions.
+    image: mdillon/postgis:11-alpine
+    ports:
+      - "0.0.0.0:5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=captable
+    # uncomment these lines to log all postgres queries
+    command:
+      - "postgres"
+      - "-c"
+      - "log_statement=all"
+  
+  captable-backend:
+    image: captable-backend:latest
+    environment:
+      - LOG_LEVEL=debug
+      - POSTGRES_CONN_URL=postgres://postgres:postgres@postgres/captable
+      - PGPASS=postgres
+    depends_on: 
+      - postgres
+    links:
+      - postgres
+    ports:
+      - "8000:80"
