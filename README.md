@@ -1,7 +1,7 @@
 ### Cap Table Frontend Project Todo
--[] Finish Create UI by way of adding shareholders for initial cap table
--[] Add Edit View for a pre-existing captable
--[] Add Edit View for Individual Shareholders
+-  Finish Create UI by way of adding shareholders for initial cap table
+-  Add Edit View for a pre-existing captable
+-  Add Edit View for Individual Shareholders
 
 
 ### If/When I finish 
